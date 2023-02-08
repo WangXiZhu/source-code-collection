@@ -6,6 +6,20 @@
  * seajs属性值概览
  {
     "Module": func,
+        STATUS: {FETCHING: 1, SAVED: 2, LOADING: 3, LOADED: 4, EXECUTING: 5, …}
+        define: ƒ (id, deps, factory)
+        get: ƒ (uri, deps)
+        preload: ƒ (callback)
+        resolve: ƒ (id, refUri)
+        save: ƒ (uri, meta)
+        use : ƒ (ids, callback, uri)
+        prototype: {
+            exec: ƒ ()
+            fetch: ƒ (requestCache)
+            load: ƒ ()
+            onload: ƒ ()
+            resolve: ƒ ()
+        }
   	"version":"2.2.1",
     "data":{
         "events":{
@@ -825,7 +839,8 @@ seajs.use
             return Module.resolve(id, uri)
         }
 
-        // TODO
+        // 异步加载模块列表
+        // eg: require.async(["./spinning", "./test"], (Spinning, Test) => {})
         require.async = function (ids, callback) {
             Module.use(ids, callback, uri + "_async_" + cid())
             return require
@@ -960,19 +975,28 @@ seajs.use
         return cachedMods[uri] || (cachedMods[uri] = new Module(uri, deps))
     }
 
+    /**
+     * 加载异步模块
+     * @param {*} ids
+     * @param {*} callback
+     * @param {*} uri
+     */
     // Use function is equal to load a anonymous module
     Module.use = function (ids, callback, uri) {
         var mod = Module.get(uri, isArray(ids) ? ids : [ids])
 
+        // 模块加载完毕的回调函数
         mod.callback = function () {
             var exports = []
             var uris = mod.resolve()
 
+            // 执行模块列表函数，返回结果放置在exports
             for (var i = 0, len = uris.length; i < len; i++) {
                 exports[i] = cachedMods[uris[i]].exec()
             }
 
-            // TODO
+            // 执行回调函数。 apply将数组参数逐个传入
+            // apply(null, [param1, param2]) => 函数接收到的是  func(param1, param2)
             if (callback) {
                 callback.apply(global, exports)
             }
@@ -983,7 +1007,10 @@ seajs.use
         mod.load()
     }
 
-    // 预加载模块
+    /**
+     * 在所有模块之前预加载模块
+     * @param {*} callback
+     */
     // Load preload modules before all other modules
     Module.preload = function (callback) {
         var preloadMods = data.preload
@@ -1016,7 +1043,7 @@ seajs.use
     }
 
     Module.define.cmd = {}
-    global.define = Module.define
+    global.define = Module.define // 函数挂载在全局
 
     // For Developers
 
@@ -1040,6 +1067,7 @@ seajs.use
 
     var BASE_RE = /^(.+?\/)(\?\?)?(seajs\/)+/
 
+    // 默认seajs的资源和其他模块放在同一个服务器下。可以通过config方法，预设base的值
     // The root path to use for id2uri parsing
     // If loaderUri is `http://test.com/libs/seajs/[??][seajs/1.2.3/]sea.js`, the
     // baseUri should be `http://test.com/libs/`
