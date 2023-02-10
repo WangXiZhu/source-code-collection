@@ -625,6 +625,7 @@ seajs.use
         this._remain = 0
     }
 
+    // 获得模块的依赖项
     // Resolve module.dependencies
     Module.prototype.resolve = function () {
         var mod = this
@@ -752,6 +753,7 @@ seajs.use
         emit("fetch", emitData)
         var requestUri = emitData.requestUri || uri
 
+        // 无url或者非cmd模块则直接加载
         // Empty uri or a non-CMD module
         if (!requestUri || fetchedList[requestUri]) {
             mod.load()

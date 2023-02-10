@@ -1,3 +1,7 @@
+# 脑图
+
+http://naotu.baidu.com/file/c0c3c59ff208536fd4cd7381371a1074?token=574f2642c8cc9b81
+
 访问https://github.com/seajs/examples/blob/master/app/hello.html 打印 seajs 对象
 
 ```js
