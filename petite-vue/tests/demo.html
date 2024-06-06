@@ -1,0 +1,29 @@
+<!--
+ * @Author: zc
+ * @Date: 2022-07-21 22:58:02
+ * @LastEditors: zc
+ * @LastEditTime: 2024-03-01 15:25:49
+ * @FilePath: /petite-vue-main/tests/demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- title %></title>
+    <script src="//assets.geilicdn.com/v-components/??flexible/0.5.0/flexible.js,cdn/jsbridge/default/index.min.js"></script>
+  </head>
+  <body>
+    <div v-scope="App">
+       
+    </div>
+
+    <template id="counter">
+        <span>counter: {{ count }}</span>
+        <button @click="handleAdd">ADD</button>
+    </template>
+    
+    <script type="module" src="./demo.js"></script>
+  </body>
+</html>

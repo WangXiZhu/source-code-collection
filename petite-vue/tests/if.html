@@ -1,0 +1,49 @@
+<!--
+ * @Author: zc
+ * @Date: 2022-01-27 18:28:30
+ * @LastEditors: zc
+ * @LastEditTime: 2024-06-05 14:59:44
+ * @FilePath: /core-main/Users/limo/Downloads/petite-vue-main/tests/if.html
+-->
+<!-- <script type="module">
+  import { createApp } from '../src'
+
+  var App = {
+    methods: {
+        foo(){
+            console.log('123')
+        }
+    },
+    $template: `
+        <button @click="open = !open">toggle</button>
+        <button @click="elseOpen = !elseOpen">toggle else</button>
+        <div v-if="open">ok</div>
+        <div v-else-if="elseOpen">else if</div>
+        <template v-else>else</template>
+    `,
+    }
+
+    console.log('App: ', App)
+createApp().mount('[v-scope]')
+</script>
+
+
+<div v-scope="App">
+       
+</div> -->
+
+
+
+<script type="module">
+  import { createApp } from '../src'
+
+  createApp().mount('#app')
+</script>
+
+<div id="app" v-scope="{ open: true, elseOpen: true }">
+  <button @click="open = !open">toggle</button>
+  <button @click="elseOpen = !elseOpen">toggle else</button>
+  <div v-if="open">ok</div>
+  <div v-else-if="elseOpen">else if</div>
+  <template v-else>else</template>
+</div>

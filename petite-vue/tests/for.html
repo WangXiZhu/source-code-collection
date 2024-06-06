@@ -1,0 +1,47 @@
+<!--
+ * @Author: zc
+ * @Date: 2022-01-27 18:28:30
+ * @LastEditors: zc
+ * @LastEditTime: 2024-03-11 15:57:59
+ * @FilePath: /petite-vue-main/tests/for.html
+-->
+<script type="module">
+  import { createApp } from '../src'
+
+  let id = 4
+  createApp({
+    list: [
+      { id: 1, text: 'bar', key: 'a' },
+      { id: 2, text: 'boo', key: 'a'  },
+      { id: 3, text: 'baz', key: 'a'  },
+      { id: 4, text: 'bazz', key: 'a'  }
+    ],
+    add() {
+      this.list.push({ id: ++id, text: 'new item' })
+    },
+    splice() {
+      this.list.splice(1, 0, { id: ++id, text: 'new item' })
+    },
+    onClick(num, item, e){
+        console.error('item: ', this, item, e)
+    }
+  }).mount('#app')
+</script>
+
+<div id="app">
+  <button @click="add">add</button>
+  <!-- <button @click="list.reverse()">reverse</button>
+  <button @click="list.pop()">pop</button>
+  <button @click="splice">splice</button> -->
+  <ul>
+    <li v-for="(item, index) in list"  @click="onClick(1, item, $event)">
+      <div>aaa {{ index }} : {{  item.id  }}</div>
+    </li>
+  </ul>
+
+  <!-- <ul>
+    <li v-for="item of list" :key="item.id">
+      <input v-model="item.text" />
+    </li>
+  </ul> -->
+</div>

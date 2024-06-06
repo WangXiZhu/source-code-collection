@@ -339,6 +339,8 @@ seajs.use
     var cwd = dirname(doc.URL) // 当前文档对象的资源链接。与document.location.href 属性的值是相等的
     var scripts = doc.scripts // 当前文档对象中所有脚本对象
 
+    // 加上 seajsnode 值，可以让 sea.js 直接获取到自身路径
+    // 如果seajs采用嵌套的方式，则需要配置一下base的值
     // Recommend to add `seajsnode` id for the `sea.js` script element
     var loaderScript = doc.getElementById("seajsnode") || scripts[scripts.length - 1]
 
@@ -1044,7 +1046,7 @@ seajs.use
         return seajs
     }
 
-    Module.define.cmd = {}
+    Module.define.cmd = {} // 判定 CMD 模块加载器是否存在
     global.define = Module.define // 函数挂载在全局
 
     // For Developers

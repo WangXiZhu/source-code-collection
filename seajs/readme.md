@@ -2,6 +2,12 @@
 
 http://naotu.baidu.com/file/c0c3c59ff208536fd4cd7381371a1074?token=574f2642c8cc9b81
 
+# 文档
+
+-   [模块的启动](https://github.com/seajs/seajs/issues/260)
+
+# 步骤
+
 访问https://github.com/seajs/examples/blob/master/app/hello.html 打印 seajs 对象
 
 ```js

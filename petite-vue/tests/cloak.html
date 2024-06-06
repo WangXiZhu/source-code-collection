@@ -1,0 +1,20 @@
+<script type="module">
+  import { createApp } from '../src'
+  createApp({
+    msg: 'content',
+    hide: false
+  }).mount()
+</script>
+
+<div v-scope v-cloak>
+    <div v-if="!hide">{{ msg }}</div>
+    <div v-else>123</div>
+
+  <button @click="hide = !hide">toggle</button>
+</div>
+
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
