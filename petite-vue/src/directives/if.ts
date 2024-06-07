@@ -2,8 +2,8 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-05 17:16:24
- * @FilePath: /core-main/Users/limo/Downloads/petite-vue-main/src/directives/if.ts
+ * @LastEditTime: 2024-06-07 16:55:09
+ * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/directives/if.ts
  */
 import { Block } from '../block'
 import { evaluate } from '../eval'
@@ -68,7 +68,6 @@ export const _if = (el: Element, exp: string, ctx: Context) => {
   // 监听函数中的数据更新
   //  Registers the given function to track reactive updates.
   ctx.effect(() => {
-    debugger
     for (let i = 0; i < branches.length; i++) {
       const { exp, el } = branches[i]
 

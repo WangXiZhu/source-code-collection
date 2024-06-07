@@ -2,8 +2,8 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-05 16:44:05
- * @FilePath: /core-main/Users/limo/Downloads/petite-vue-main/src/context.ts
+ * @LastEditTime: 2024-06-07 17:12:46
+ * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/context.ts
  */
 import {
   effect as rawEffect,
@@ -51,6 +51,14 @@ export const createContext = (parent?: Context): Context => {
   return ctx
 }
 
+/**
+ * 创建1个新的上下文数据
+ * 包含data，同时也可以访问到ctx
+ * https://si.geilicdn.com/img-48890000018ff1f8baf90a20e7c7-unadjust_1141_712.png
+ * @param ctx 
+ * @param data 
+ * @returns 
+ */
 export const createScopedContext = (ctx: Context, data = {}): Context => {
   const parentScope = ctx.scope
   const mergedScope = Object.create(parentScope)

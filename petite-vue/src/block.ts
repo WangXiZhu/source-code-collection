@@ -2,8 +2,8 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-05 16:43:54
- * @FilePath: /core-main/Users/limo/Downloads/petite-vue-main/src/block.ts
+ * @LastEditTime: 2024-06-07 16:54:03
+ * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/block.ts
  */
 import { Context, createContext } from './context'
 import { walk } from './walk'
@@ -50,7 +50,7 @@ export class Block {
     }
 
     console.log('walk constructor this.template: ', this.template)
-    walk(this.template, this.ctx)
+    walk(this.template, this.ctx)       // 遍历节点数据
   }
 
   insert(parent: Element, anchor: Node | null = null) {

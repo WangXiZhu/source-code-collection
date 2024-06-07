@@ -19,9 +19,9 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
 
   const nextNode = el.nextSibling
 
-  const parent = el.parentElement!
+  const parent = el.parentElement!  // 非空断言。告诉编译器该节点不可能为空
   const anchor = new Text('')
-  parent.insertBefore(anchor, el)
+  parent.insertBefore(anchor, el)   // 锚点占位，用于后续节点往文档流中插入  
   parent.removeChild(el)
 
   const sourceExp = inMatch[2].trim()
@@ -31,6 +31,7 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
   let indexExp: string | undefined
   let objIndexExp: string | undefined
 
+  // 解析出 节点的标识
   let keyAttr = 'key'
   let keyExp =
     el.getAttribute(keyAttr) ||
@@ -55,11 +56,13 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
     isArrayDestructure = valueExp[0] === '['
   }
 
+
   let mounted = false
   let blocks: Block[]
   let childCtxs: Context[]
   let keyToIndexMap: Map<any, number>
 
+  // 通过判断source的数据类型，返回子数组
   const createChildContexts = (source: unknown): [Context[], KeyToIndexMap] => {
     const map: KeyToIndexMap = new Map()
     const ctxs: Context[] = []
@@ -88,7 +91,8 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
     index: number,
     objKey?: string
   ): Context => {
-    const data: any = {}
+    // #region 组装子项的数据。通过给子项目定义的 value名字(valueExp)和键名(indexExp) 组成一个新的数据
+    const data: any = {}        // {item: Proxy, index: index}
     if (destructureBindings) {
       destructureBindings.forEach(
         (b, i) => (data[b] = value[isArrayDestructure ? i : b])
@@ -102,7 +106,9 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
     } else {
       indexExp && (data[indexExp] = index)
     }
-    const childCtx = createScopedContext(ctx, data)
+    //#endregion
+
+    const childCtx = createScopedContext(ctx, data)     // 包含了当前子项数据和ctx
     console.log('keyExp: ', keyExp)
     const key = keyExp ? evaluate(childCtx.scope, keyExp) : index
     map.set(key, index)
@@ -116,20 +122,22 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
     console.log('=========mountBlock ==========')
     const block = new Block(el, ctx)
     block.key = ctx.key
-    block.insert(parent, ref)
+    block.insert(parent, ref)   // parent.insertBefore(this.template, anchor)
     return block
   }
 
   ctx.effect(() => {
-    const source = evaluate(ctx.scope, sourceExp)
+    const source = evaluate(ctx.scope, sourceExp)   // 返回 数组proxy对象
     const prevKeyToIndexMap = keyToIndexMap
     ;[childCtxs, keyToIndexMap] = createChildContexts(source)
 
     console.log('childCtxs: ', childCtxs, keyToIndexMap)
     if (!mounted) {
-      blocks = childCtxs.map((s) => mountBlock(s, anchor))
+        // 初始化时候添加
+      blocks = childCtxs.map((s) => mountBlock(s, anchor))  // 每次在锚点前添加
       mounted = true
     } else {
+        // 数组改变
       for (let i = 0; i < blocks.length; i++) {
         if (!keyToIndexMap.has(blocks[i].key)) {
           blocks[i].remove()
@@ -145,15 +153,15 @@ export const _for = (el: Element, exp: string, ctx: Context) => {
         const oldIndex = prevKeyToIndexMap.get(childCtx.key)
         let block
         if (oldIndex == null) {
-          // new
+          // new 新增节点
           block = mountBlock(
             childCtx,
             nextBlock ? nextBlock.el : anchor
           )
         } else {
-          // update
+          // update 更新节点
           block = blocks[oldIndex]
-          Object.assign(block.ctx.scope, childCtx.scope)
+          Object.assign(block.ctx.scope, childCtx.scope)    // 合并数据
           if (oldIndex !== i) {
             // moved
             if (

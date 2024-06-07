@@ -2,8 +2,8 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-05 17:18:44
- * @FilePath: /core-main/Users/limo/Downloads/petite-vue-main/src/directives/on.ts
+ * @LastEditTime: 2024-06-07 09:59:46
+ * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/directives/on.ts
  */
 import { Directive } from '.'
 import { hyphenate } from '@vue/shared'
@@ -37,7 +37,6 @@ const modifierGuards: Record<
 }
 
 export const on: Directive = ({ el, get, exp, arg, modifiers }) => {
-    debugger
   if (!arg) {
     if (import.meta.env.DEV) {
       console.error(`v-on="obj" syntax is not supported in petite-vue.`)
