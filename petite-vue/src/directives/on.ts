@@ -2,7 +2,7 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-07 09:59:46
+ * @LastEditTime: 2024-06-11 10:51:24
  * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/directives/on.ts
  */
 import { Directive } from '.'
@@ -59,9 +59,11 @@ export const on: Directive = ({ el, get, exp, arg, modifiers }) => {
     nextTick(handler)
     return
   } else if (arg === 'vue:unmounted') {
-    return () => handler()
+    return () => handler()  // ctx.cleanups中暂存
   }
 
+  
+  // 处理额外的修饰符
   if (modifiers) {
     // map modifiers
     if (arg === 'click') {

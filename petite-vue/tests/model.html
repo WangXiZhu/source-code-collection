@@ -14,13 +14,15 @@
   falseValue: { a: 2 },
   arr: ['one'],
   radioSelected: 'two',
-  selected: 'two'
+  selected: 'two',
+  password: '123'
 }"
 >
   <pre>{{ $data }}</pre>
   <h2>Text Input</h2>
   {{ text }}
   <input v-model.trim="text" />
+  <input type="password" v-model.trim="password"/>
 
   <h2>TextArea</h2>
   {{ text }}

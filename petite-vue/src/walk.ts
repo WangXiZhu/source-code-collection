@@ -174,7 +174,9 @@ const applyDirective = (
   arg?: string,
   modifiers?: Record<string, true>
 ) => {
-  const get = (e = exp) => evaluate(ctx.scope, e, el)   // 对应表达式的封装的with 匿名函数
+    // exp作为「默认数据」赋值给形参 e，并作为参数传给后续使用。 如果直接执行 get(), 则返回实际数据为scope[exp]
+    // 调用evaluate函数，返回 对应表达式的封装的with 匿名函数
+  const get = (e = exp) => evaluate(ctx.scope, e, el)   
   const cleanup = dir({
     el,
     get,
@@ -184,6 +186,7 @@ const applyDirective = (
     arg,
     modifiers
   })
+  // 如果返回了函数，则存储下来。如unmounted事件，待需要清理再执行
   if (cleanup) {
     ctx.cleanups.push(cleanup)
   }

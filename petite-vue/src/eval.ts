@@ -2,13 +2,15 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-05 16:33:02
- * @FilePath: /core-main/Users/limo/Downloads/petite-vue-main/src/eval.ts
+ * @LastEditTime: 2024-06-11 14:54:29
+ * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/eval.ts
  */
 const evalCache: Record<string, Function> = Object.create(null)
 
 /**
  * 将表达式转为函数
+ * 
+ * 后续所有获取数据的方式都是通过 with函数包裹的方式，将scope提前绑定作为作用域链
  * @param scope 
  * @param exp 
  * @param el 
@@ -39,6 +41,16 @@ export const execute = (scope: any, exp: string, el?: Node) => {
  * https://si.geilicdn.com/img-2d880000018fe77e40240a23057e-unadjust_1281_1147.png
  * 证明方式可以通过断点click的内存函数，能够打印出挂载在 ctx.scope 下的所有属性，包括但不限于 $nextTick / $s / $refs 等等
  * 
+ * 
+ * 
+ * 关于with的相关解释
+ * 
+ * with 语句扩展一个语句的作用域链
+ * 
+ * with (expression)
+    statement
+
+    expression： 将给定的表达式添加到在评估语句时使用的作用域链上。
  * @returns 
  */
 const toFunction = (exp: string): Function => {

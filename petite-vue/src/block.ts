@@ -2,7 +2,7 @@
  * @Author: zc
  * @Date: 2022-01-27 18:28:30
  * @LastEditors: zc
- * @LastEditTime: 2024-06-07 16:54:03
+ * @LastEditTime: 2024-06-11 10:48:12
  * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/src/block.ts
  */
 import { Context, createContext } from './context'
@@ -97,6 +97,10 @@ export class Block {
     this.teardown()
   }
 
+  /**
+   * 停止响应式
+   * 执行 vue:unmounted 回调
+   */
   teardown() {
     this.ctx.blocks.forEach((child) => {
       child.teardown()

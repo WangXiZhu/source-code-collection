@@ -1,3 +1,7 @@
+/**
+ * looseEqual： 判断数据是否相等
+ * looseIndexOf： 查找对应的坐标
+ */
 import { isArray, looseEqual, looseIndexOf, toNumber } from '@vue/shared'
 import { Directive } from '.'
 import { listen } from '../utils'
@@ -6,21 +10,27 @@ export const model: Directive<
   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 > = ({ el, exp, get, effect, modifiers }) => {
   const type = el.type
-  const assign = get(`(val) => { ${exp} = val }`)
+  const assign = get(`(val) => { debugger; ${exp} = val }`) // 赋值函数
   const { trim, number = type === 'number' } = modifiers || {}
 
   if (el.tagName === 'SELECT') {
+    // 处理 <select> 标签
     const sel = el as HTMLSelectElement
+
+    // 监听dom操作
     listen(el, 'change', () => {
       const selectedVal = Array.prototype.filter
         .call(sel.options, (o: HTMLOptionElement) => o.selected)
         .map((o: HTMLOptionElement) =>
           number ? toNumber(getValue(o)) : getValue(o)
         )
-      assign(sel.multiple ? selectedVal : selectedVal[0])
+      assign(sel.multiple ? selectedVal : selectedVal[0])   // 给对应的v-model赋值。直接更新scope上「exp」属性的值
     })
+
+    // 上面通过assign给model更新数据后，reactivity会更新该effect的回调。 数据一旦修改完毕，则会 trigger  set事件。如果有其他地方引用，则更新数据
     effect(() => {
-      const value = get()
+        //#region 更新dom中的数据。在v-model初始化的时候，需要通过该方法渲染出正确的结点。一旦执行，即使去掉后续功能也是正常的
+      const value = get()   // 更新后的数据
       const isMultiple = sel.multiple
       for (let i = 0, l = sel.options.length; i < l; i++) {
         const option = sel.options[i]
@@ -33,7 +43,7 @@ export const model: Directive<
           }
         } else {
           if (looseEqual(getValue(option), value)) {
-            if (sel.selectedIndex !== i) sel.selectedIndex = i
+            if (sel.selectedIndex !== i) sel.selectedIndex = i      // 通过dom操作<select></select>更新下标
             return
           }
         }
@@ -41,6 +51,7 @@ export const model: Directive<
       if (!isMultiple && sel.selectedIndex !== -1) {
         sel.selectedIndex = -1
       }
+      //#endregion
     })
   } else if (type === 'checkbox') {
     listen(el, 'change', () => {
@@ -88,7 +99,7 @@ export const model: Directive<
       }
     })
   } else {
-    // text-like
+    // text-like  类文本的输入框。如 type为 text/textarea/passport等等
     const resolveValue = (val: string) => {
       if (trim) return val.trim()
       if (number) return toNumber(val)
@@ -99,8 +110,9 @@ export const model: Directive<
     listen(el, 'compositionstart', onCompositionStart)
     listen(el, 'compositionend', onCompositionEnd)
 
+    // 通过lazy修饰符监听change或者input事件
     listen(el, modifiers?.lazy ? 'change' : 'input', () => {
-      if ((el as any).composing) return
+      if ((el as any).composing) return // compositionstart事件触发中
       assign(resolveValue(el.value))
     })
     if (trim) {
@@ -115,6 +127,7 @@ export const model: Directive<
       }
       const curVal = el.value
       const newVal = get()
+      // document.activeElement当前激活的节点
       if (document.activeElement === el && resolveValue(curVal) === newVal) {
         return
       }

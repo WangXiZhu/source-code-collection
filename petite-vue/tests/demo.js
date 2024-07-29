@@ -2,8 +2,8 @@
  * @Author: zc
  * @Date: 2024-03-01 15:25:23
  * @LastEditors: zc
- * @LastEditTime: 2024-03-04 14:34:16
- * @FilePath: /petite-vue-main/tests/demo.js
+ * @LastEditTime: 2024-06-11 10:44:53
+ * @FilePath: /core-main/Users/limo/github/source-code-collection/petite-vue/tests/demo.js
  */
 /*
  * @Author: zc
@@ -67,9 +67,11 @@ const App = {
     $template: `
         {{ index }}
         <div v-text="pageName" class="a" :class="pageName" :data="pageName"></div>
-        <button v-if="bool" @click="pingFunc" @vue:mounted="onMounted($el)"
-        @vue:unmounted="console.log('unmounted: ', $el)">Ping</button>
+        
+        <button v-if="bool" @click="pingFunc" @vue:mounted="onMounted($el)" @vue:unmounted="console.log('unmounted: ', $el)">Ping</button>
 
+
+        <button @click="bool=!bool">Ping开关</button>  
         <div v-scope="Counter(1)"  ></div>
         <span v-scope="pvButton(pvButtonConfig)"></span>
         <div v-scope="pvDialog(pvDialogConfig)"></div>
@@ -79,7 +81,7 @@ const App = {
     pageName: 'index',
     pingFunc() {
         console.log(`pong ${this.pageName} page`);
-        TestHooks();
+        // TestHooks();
         this.index++
     },
     onMounted($el){
