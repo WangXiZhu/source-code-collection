@@ -1,0 +1,256 @@
+{
+  "exportedAt": "2026-05-19T07:55:09.394Z",
+  "source": "https://x.com/home#following",
+  "posts": [
+    {
+      "author": "GithubProjects",
+      "language": "zh",
+      "publishedAt": "2026-05-19T07:31:40.000Z",
+      "source": "X / @GithubProjects",
+      "summary": "GitHub Projects Community\n@GithubProjects\n·\n23m\nExplore it here:\nhttps://\nosp.fyi/cuda-oxide\n在这里探索：\n \nhttps://\nosp.fyi/cuda-oxide \n2\n655",
+      "text": "GitHub Projects Community\n@GithubProjects\n·\n23m\nExplore it here:\nhttps://\nosp.fyi/cuda-oxide\n在这里探索：\n \nhttps://\nosp.fyi/cuda-oxide \n2\n655",
+      "title": "GitHub Projects Community",
+      "url": "https://x.com/GithubProjects/status/2056638908478419143"
+    },
+    {
+      "author": "GithubProjects",
+      "language": "zh",
+      "publishedAt": "2026-05-19T07:31:37.000Z",
+      "source": "X / @GithubProjects",
+      "summary": "GitHub Projects Community\n@GithubProjects\n·\n23m\nGPU programming in Rust has always meant one of two things: a DSL that looks like Rust but isn't, or unsafe FFI bindings to C++ CUDA code.\ncuda-oxide is NVIDIA's answer: a custom rustc codegen backend that compiles standard Rust directly to PTX. Write a kernel the way you'd\nRust 中的 GPU 编程一直意味着两种东西：一种看起来像 Rust 但不是的 DSL，或者是不安全的 FFI 绑定到 C++ CUDA 代码。\ncuda-oxide 是 NVIDIA 的答案：一个定制的 rustc 代码生成后端，可以直接将标准 Rust 编译成 PTX。像你平时那样写一个内核\nShow more\n1\n1\n14\n1K",
+      "text": "GitHub Projects Community\n@GithubProjects\n·\n23m\nGPU programming in Rust has always meant one of two things: a DSL that looks like Rust but isn't, or unsafe FFI bindings to C++ CUDA code.\ncuda-oxide is NVIDIA's answer: a custom rustc codegen backend that compiles standard Rust directly to PTX. Write a kernel the way you'd\nRust 中的 GPU 编程一直意味着两种东西：一种看起来像 Rust 但不是的 DSL，或者是不安全的 FFI 绑定到 C++ CUDA 代码。\ncuda-oxide 是 NVIDIA 的答案：一个定制的 rustc 代码生成后端，可以直接将标准 Rust 编译成 PTX。像你平时那样写一个内核\nShow more\n1\n1\n14\n1K",
+      "title": "GitHub Projects Community",
+      "url": "https://x.com/GithubProjects/status/2056638896126242999"
+    },
+    {
+      "author": "GithubProjects",
+      "language": "zh",
+      "publishedAt": "2026-05-19T05:00:04.000Z",
+      "source": "X / @GithubProjects",
+      "summary": "GitHub Projects Community\n@GithubProjects\n·\n2h\nReplying to \n@GithubProjects\nExplore it here:\nhttps://\nosp.fyi/sana\n在这里探索：\n \nhttps://\nosp.fyi/sana \n2\n2K",
+      "text": "GitHub Projects Community\n@GithubProjects\n·\n2h\nReplying to \n@GithubProjects\nExplore it here:\nhttps://\nosp.fyi/sana\n在这里探索：\n \nhttps://\nosp.fyi/sana \n2\n2K",
+      "title": "GitHub Projects Community",
+      "url": "https://x.com/GithubProjects/status/2056600755730350425"
+    },
+    {
+      "author": "GithubProjects",
+      "language": "zh",
+      "publishedAt": "2026-05-19T05:00:01.000Z",
+      "source": "X / @GithubProjects",
+      "summary": "GitHub Projects Community\n@GithubProjects\n·\n2h\nImage generation used to require a cluster. SANA runs 4096x4096 on a 16GB laptop. 0.6B params.\nLinear attention. 32x latent compression. Sub-second at 1024px. 4-bit quantization fits under 8GB.\nOpen source with full training pipeline.\n图像生成过去需要集群。SANA 在 16GB 笔记本电脑上运行 4096x4096。0.6B 参数。\n线性注意力。32 倍潜在压缩。在 1024px 下亚秒级。4 位量化可在 8GB 以下。\n开源，包含完整训练流程。\n2\n4\n56\n3.9K",
+      "text": "GitHub Projects Community\n@GithubProjects\n·\n2h\nImage generation used to require a cluster. SANA runs 4096x4096 on a 16GB laptop. 0.6B params.\nLinear attention. 32x latent compression. Sub-second at 1024px. 4-bit quantization fits under 8GB.\nOpen source with full training pipeline.\n图像生成过去需要集群。SANA 在 16GB 笔记本电脑上运行 4096x4096。0.6B 参数。\n线性注意力。32 倍潜在压缩。在 1024px 下亚秒级。4 位量化可在 8GB 以下。\n开源，包含完整训练流程。\n2\n4\n56\n3.9K",
+      "title": "GitHub Projects Community",
+      "url": "https://x.com/GithubProjects/status/2056600743747129849"
+    },
+    {
+      "author": "NousResearch",
+      "language": "zh",
+      "publishedAt": "2026-05-19T04:19:04.000Z",
+      "source": "X / @NousResearch",
+      "summary": "Nous Research\n@NousResearch\n·\n3h\n感谢 \n@dotey\n 将他的 baoyu-comic skill 移植到 Hermes Agent！\n这个 skill 可以把一段 prompt 或源文档转成多页知识漫画，支持 6 种风格、7 种语气、7 种版式和 5 个预设。\nhttp://\ngithub.com/NousResearch/h\nermes-agent/tree/main/skills/creative/baoyu-comic\n…\n44\n43\n511\n31K",
+      "text": "Nous Research\n@NousResearch\n·\n3h\n感谢 \n@dotey\n 将他的 baoyu-comic skill 移植到 Hermes Agent！\n这个 skill 可以把一段 prompt 或源文档转成多页知识漫画，支持 6 种风格、7 种语气、7 种版式和 5 个预设。\nhttp://\ngithub.com/NousResearch/h\nermes-agent/tree/main/skills/creative/baoyu-comic\n…\n44\n43\n511\n31K",
+      "title": "Nous Research",
+      "url": "https://x.com/NousResearch/status/2056590436324491771"
+    },
+    {
+      "author": "freeCodeCamp",
+      "language": "zh",
+      "publishedAt": "2026-05-19T04:01:03.000Z",
+      "source": "X / @freeCodeCamp",
+      "summary": "freeCodeCamp.org\n@freeCodeCamp\n·\n3h\nC++ is a powerful, high-performance programming language devs use for things like systems and game development.\nAnd in this in-depth tutorial, Mark teaches you the basics through a series of interactive exercises. \nYou'll learn about variables, loops, arrays, functions,\nC++ 是一种强大、高性能的编程语言，开发者用它来进行系统开发和游戏开发等。\n在这个深入的教程中，马克通过一系列互动练习教你基础知识。\n你将学习变量、循环、数组、函数等。\nShow more\n27\n156\n5.1K",
+      "text": "freeCodeCamp.org\n@freeCodeCamp\n·\n3h\nC++ is a powerful, high-performance programming language devs use for things like systems and game development.\nAnd in this in-depth tutorial, Mark teaches you the basics through a series of interactive exercises. \nYou'll learn about variables, loops, arrays, functions,\nC++ 是一种强大、高性能的编程语言，开发者用它来进行系统开发和游戏开发等。\n在这个深入的教程中，马克通过一系列互动练习教你基础知识。\n你将学习变量、循环、数组、函数等。\nShow more\n27\n156\n5.1K",
+      "title": "freeCodeCamp.org",
+      "url": "https://x.com/freeCodeCamp/status/2056585901564686588"
+    },
+    {
+      "author": "shanaka86",
+      "language": "zh",
+      "publishedAt": "2026-05-19T03:56:31.000Z",
+      "source": "X / @shanaka86",
+      "summary": "Shanaka Anslem Perera \n@shanaka86\n·\n3h\nStrategy holds 843,738 Bitcoin. That is approximately 4% of every Bitcoin that will ever exist. Last week alone, between May 11 and May 17, the company added 24,869 BTC for $2.01 billion, funded 97% by selling $1.95 billion of preferred stock yielding 11.5% to 927,000 retail\n策略持有 843,738 比特币。这是所有将永远存在的比特币的大约 4%。仅在上周，即 5 月 11 日至 5 月 17 日之间，该公司就增加了 24,869 BTC，价值 201 亿美元，其中 97%的资金来自出售收益率 11.5%的 9.27 亿美元优先股，用于向零售商融资。\nShow more\nQuote\n引用\nStrategy\n@Strategy\n·\n19h\nStrategy has acquired 24,869 BTC for ~$2.01 billion at ~$80,985 per bitcoin and has achieved BTC Yield of 12.6% YTD 2026. As of 5/17/2026, we hodl 843,738 $BTC acquired for ~$63.87 billion at ~$75,700 per bitcoin. $MSTR $STRC \nhttps://\nstrategy.com/press/strategy\n-acquires-24869-btc-and-achieves-btc-yield-of-12-6-ytd-now-holds-843738-btc_05-18-2026?may=18\n…\n12\n28\n137\n19K",
+      "text": "Shanaka Anslem Perera \n@shanaka86\n·\n3h\nStrategy holds 843,738 Bitcoin. That is approximately 4% of every Bitcoin that will ever exist. Last week alone, between May 11 and May 17, the company added 24,869 BTC for $2.01 billion, funded 97% by selling $1.95 billion of preferred stock yielding 11.5% to 927,000 retail\n策略持有 843,738 比特币。这是所有将永远存在的比特币的大约 4%。仅在上周，即 5 月 11 日至 5 月 17 日之间，该公司就增加了 24,869 BTC，价值 201 亿美元，其中 97%的资金来自出售收益率 11.5%的 9.27 亿美元优先股，用于向零售商融资。\nShow more\nQuote\n引用\nStrategy\n@Strategy\n·\n19h\nStrategy has acquired 24,869 BTC for ~$2.01 billion at ~$80,985 per bitcoin and has achieved BTC Yield of 12.6% YTD 2026. As of 5/17/2026, we hodl 843,738 $BTC acquired for ~$63.87 billion at ~$75,700 per bitcoin. $MSTR $STRC \nhttps://\nstrategy.com/press/strategy\n-acquires-24869-btc-and-achieves-btc-yield-of-12-6-ytd-now-holds-843738-btc_05-18-2026?may=18\n…\n12\n28\n137\n19K",
+      "title": "Shanaka Anslem Perera ",
+      "url": "https://x.com/shanaka86/status/2056584761385320837"
+    },
+    {
+      "author": "shanaka86",
+      "language": "en",
+      "publishedAt": "2026-05-19T03:42:33.000Z",
+      "source": "X / @shanaka86",
+      "summary": "Shanaka Anslem Perera \n@shanaka86\n·\n4h\nPresident Donald Trump sued his own government for ten billion dollars. He settled with himself. The fund created from that settlement is $1.776 billion. The number is not arithmetic. It is encoded with the year of American independence.\nOn May 18, the Justice Department\nShow more\n10\n42\n68\n11K",
+      "text": "Shanaka Anslem Perera \n@shanaka86\n·\n4h\nPresident Donald Trump sued his own government for ten billion dollars. He settled with himself. The fund created from that settlement is $1.776 billion. The number is not arithmetic. It is encoded with the year of American independence.\nOn May 18, the Justice Department\nShow more\n10\n42\n68\n11K",
+      "title": "Shanaka Anslem Perera ",
+      "url": "https://x.com/shanaka86/status/2056581248169185584"
+    },
+    {
+      "author": "Tesla",
+      "language": "zh",
+      "publishedAt": "2026-05-19T03:28:53.000Z",
+      "source": "X / @Tesla",
+      "summary": "Tesla\n@Tesla\n·\n4h\nFSD Supervised v14.3.3 drives even smoother & nags you less\nFSD 受控版 v14.3.3 运行更顺滑，且更少烦人\nQuote\n引用\nHerbert Ong\n@herbertong\n·\n7h\n Tesla FSD v14.3.3 may be one of the biggest feeling upgrades yet \n@thejefflutz  says early testers are seeing:\n• Much less driver-monitoring nagging\n• Smoother, more human-like driving\n• Faster Smart Summon (up to 8 mph)\n• “Hey Grok” support\n• Better visualizations  \n171\n216\n1.9K\n157K",
+      "text": "Tesla\n@Tesla\n·\n4h\nFSD Supervised v14.3.3 drives even smoother & nags you less\nFSD 受控版 v14.3.3 运行更顺滑，且更少烦人\nQuote\n引用\nHerbert Ong\n@herbertong\n·\n7h\n Tesla FSD v14.3.3 may be one of the biggest feeling upgrades yet \n@thejefflutz  says early testers are seeing:\n• Much less driver-monitoring nagging\n• Smoother, more human-like driving\n• Faster Smart Summon (up to 8 mph)\n• “Hey Grok” support\n• Better visualizations  \n171\n216\n1.9K\n157K",
+      "title": "Tesla",
+      "url": "https://x.com/Tesla/status/2056577806981911000"
+    },
+    {
+      "author": "yanhua1010",
+      "language": "zh",
+      "publishedAt": "2026-05-19T03:25:46.000Z",
+      "source": "X / @yanhua1010",
+      "summary": "Yanhua\n@yanhua1010\n·\n4h\nhttps://\nhelio.im 一款AI Native workspace\n \nhttps://\nhelio.im 一个 AI 原生工作空间\nHelio — the AI-native team workspace\nFrom helio.im\n3\n12\n106\n30K",
+      "text": "Yanhua\n@yanhua1010\n·\n4h\nhttps://\nhelio.im 一款AI Native workspace\n \nhttps://\nhelio.im 一个 AI 原生工作空间\nHelio — the AI-native team workspace\nFrom helio.im\n3\n12\n106\n30K",
+      "title": "Yanhua",
+      "url": "https://x.com/yanhua1010/status/2056577025293586561"
+    },
+    {
+      "author": "shanaka86",
+      "language": "en",
+      "publishedAt": "2026-05-19T03:24:12.000Z",
+      "source": "X / @shanaka86",
+      "summary": "Shanaka Anslem Perera \n@shanaka86\n·\n4h\nIran could not collect the toll. So Iran is selling the insurance.\nThe US naval blockade has held the Strait of Hormuz at 5 to 27 percent of pre-crisis traffic for two months. The IRGC’s crypto toll scheme generated nothing because there were no ships to tax. \nOn May 16, the\nShow more\n9\n41\n70\n14K",
+      "text": "Shanaka Anslem Perera \n@shanaka86\n·\n4h\nIran could not collect the toll. So Iran is selling the insurance.\nThe US naval blockade has held the Strait of Hormuz at 5 to 27 percent of pre-crisis traffic for two months. The IRGC’s crypto toll scheme generated nothing because there were no ships to tax. \nOn May 16, the\nShow more\n9\n41\n70\n14K",
+      "title": "Shanaka Anslem Perera ",
+      "url": "https://x.com/shanaka86/status/2056576627635818872"
+    },
+    {
+      "author": "TradercBTC",
+      "language": "zh",
+      "publishedAt": "2026-05-19T03:22:18.000Z",
+      "source": "X / @TradercBTC",
+      "summary": "trader-c\n@TradercBTC\n·\n4h\n兄弟们，抖音\nQuote\ntrader-c\n@TradercBTC\n·\n4h\n3.07 复制打开抖音，看看【trader-c的作品】5.19，美股，半导体大跌？大a，黄金  \nhttps://\nv.douyin.com/xWKCG-DfpmU/ :8pm u@S.Ym 10/10 wse:/\n2\n4\n603",
+      "text": "trader-c\n@TradercBTC\n·\n4h\n兄弟们，抖音\nQuote\ntrader-c\n@TradercBTC\n·\n4h\n3.07 复制打开抖音，看看【trader-c的作品】5.19，美股，半导体大跌？大a，黄金  \nhttps://\nv.douyin.com/xWKCG-DfpmU/ :8pm u@S.Ym 10/10 wse:/\n2\n4\n603",
+      "title": "trader-c",
+      "url": "https://x.com/TradercBTC/status/2056576150621831257"
+    },
+    {
+      "author": "TradercBTC",
+      "language": "zh",
+      "publishedAt": "2026-05-19T03:21:39.000Z",
+      "source": "X / @TradercBTC",
+      "summary": "trader-c\n@TradercBTC\n·\n4h\n3.07 复制打开抖音，看看【trader-c的作品】5.19，美股，半导体大跌？大a，黄金  \nhttps://\nv.douyin.com/xWKCG-DfpmU/ :8pm u@S.Ym 10/10 wse:/\n5\n1\n2\n987",
+      "text": "trader-c\n@TradercBTC\n·\n4h\n3.07 复制打开抖音，看看【trader-c的作品】5.19，美股，半导体大跌？大a，黄金  \nhttps://\nv.douyin.com/xWKCG-DfpmU/ :8pm u@S.Ym 10/10 wse:/\n5\n1\n2\n987",
+      "title": "trader-c",
+      "url": "https://x.com/TradercBTC/status/2056575989489238106"
+    },
+    {
+      "author": "yanhua1010",
+      "language": "zh",
+      "publishedAt": "2026-05-19T02:40:51.000Z",
+      "source": "X / @yanhua1010",
+      "summary": "Yanhua\n@yanhua1010\n·\n5h\n 这个有意思啊，Agent版的黄页\n1\n9\n1.2K",
+      "text": "Yanhua\n@yanhua1010\n·\n5h\n 这个有意思啊，Agent版的黄页\n1\n9\n1.2K",
+      "title": "Yanhua",
+      "url": "https://x.com/yanhua1010/status/2056565718418956615"
+    },
+    {
+      "author": "yanhua1010",
+      "language": "zh",
+      "publishedAt": "2026-05-19T02:27:23.000Z",
+      "source": "X / @yanhua1010",
+      "summary": "Yanhua\n@yanhua1010\n·\n5h\n突然发现之前折腾什么OpenClaw，Hermes全他妈浪费时间。\n这才是真正的AI Native，目前体验下来最舒服的产品\n113\n70\n572\n172K",
+      "text": "Yanhua\n@yanhua1010\n·\n5h\n突然发现之前折腾什么OpenClaw，Hermes全他妈浪费时间。\n这才是真正的AI Native，目前体验下来最舒服的产品\n113\n70\n572\n172K",
+      "title": "Yanhua",
+      "url": "https://x.com/yanhua1010/status/2056562330734035113"
+    },
+    {
+      "author": "minchoi",
+      "language": "zh",
+      "publishedAt": "2026-05-18T03:06:15.000Z",
+      "source": "X / @minchoi",
+      "summary": "Min Choi reposted\nMin Choi 转发\nMin Choi\n@minchoi\n·\nMay 18\nHuman wins.\n10 hours... robot had no breaks.\nHuman still won.\nWe are so back.\n人类获胜。\n10 个小时...机器人没有休息。\n人类仍然获胜。\n我们回来了。\nQuote\n引用\nMin Choi\n@minchoi\n·\nMay 18\nWow... Figure is running Man vs Machine live.\n10 hours of package sorting.\nHuman gets California breaks.\nRobot does not.\nWhoever sorts the most packages wins. x.com/Figure_robot/s…\n哇...人机大战正在直播。\n10 小时的包裹分拣。\n人类享受加利福尼亚的假期。\n机器人不享受。\n谁分拣的包裹最多就获胜。x.com/Figure_robot/s…\n303\n187\n2.3K\n258K",
+      "text": "Min Choi reposted\nMin Choi 转发\nMin Choi\n@minchoi\n·\nMay 18\nHuman wins.\n10 hours... robot had no breaks.\nHuman still won.\nWe are so back.\n人类获胜。\n10 个小时...机器人没有休息。\n人类仍然获胜。\n我们回来了。\nQuote\n引用\nMin Choi\n@minchoi\n·\nMay 18\nWow... Figure is running Man vs Machine live.\n10 hours of package sorting.\nHuman gets California breaks.\nRobot does not.\nWhoever sorts the most packages wins. x.com/Figure_robot/s…\n哇...人机大战正在直播。\n10 小时的包裹分拣。\n人类享受加利福尼亚的假期。\n机器人不享受。\n谁分拣的包裹最多就获胜。x.com/Figure_robot/s…\n303\n187\n2.3K\n258K",
+      "title": "Min Choi reposted",
+      "url": "https://x.com/minchoi/status/2056209724425539999"
+    },
+    {
+      "author": "minchoi",
+      "language": "zh",
+      "publishedAt": "2026-05-17T23:44:44.000Z",
+      "source": "X / @minchoi",
+      "summary": "Min Choi reposted\nMin Choi 转发\nMin Choi\n@minchoi\n·\nMay 18\nWow... Figure is running Man vs Machine live.\n10 hours of package sorting.\nHuman gets California breaks.\nRobot does not.\nWhoever sorts the most packages wins.\n哇... Figure 正在进行人机对决直播。\n10 小时的包裹分拣。\n人类获得加州休息时间。\n机器人不行。\n谁分拣的包裹最多谁就赢。\nQuote\n引用\nFigure\n@Figure_robot\n·\nMay 18\nWe're live Man vs. Machine \nhttps://\nx.com/i/broadcasts/1\naJbdbgeAaQKX\n…\n我们开始直播了 机器人对决人类 x.com/i/broadcasts/1…\n32\n15\n118\n239K",
+      "text": "Min Choi reposted\nMin Choi 转发\nMin Choi\n@minchoi\n·\nMay 18\nWow... Figure is running Man vs Machine live.\n10 hours of package sorting.\nHuman gets California breaks.\nRobot does not.\nWhoever sorts the most packages wins.\n哇... Figure 正在进行人机对决直播。\n10 小时的包裹分拣。\n人类获得加州休息时间。\n机器人不行。\n谁分拣的包裹最多谁就赢。\nQuote\n引用\nFigure\n@Figure_robot\n·\nMay 18\nWe're live Man vs. Machine \nhttps://\nx.com/i/broadcasts/1\naJbdbgeAaQKX\n…\n我们开始直播了 机器人对决人类 x.com/i/broadcasts/1…\n32\n15\n118\n239K",
+      "title": "Min Choi reposted",
+      "url": "https://x.com/minchoi/status/2056159009845973155"
+    },
+    {
+      "author": "PrajwalTomar_",
+      "language": "zh",
+      "publishedAt": "2026-05-12T16:30:28.000Z",
+      "source": "X / @PrajwalTomar_",
+      "summary": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 13\nIT'S SO OVER!!! Creative agencies are absolutely cooked.\nI just connected Claude Code to Higgsfield and generated:\n→ Product photos\n→ Instagram ads\n→ Launch videos\nAll in MINUTES.\nMost people are still paying $5k/month for this while opening Canva like it's 2022.\nThis\n太完了！！！创意机构完全完蛋了。\n我刚将 Claude Code 连接到 Higgsfield 并生成了：\n→ 产品照片\n→ Instagram 广告\n→ 启动视频\n全部在分钟内完成。\n大多数人仍在每月支付 5k 美元，而像 2022 年一样使用 Canva。\n这就是\nShow more\nQuote\n引用\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\n Article\n  文章\nClaude + Higgsfield can now run a FULL creative studio.\nClaude + Higgsfield 现在可以运行一个完整的创意工作室。\nMost people are still opening Canva.\nSome are paying agencies thousands of dollars for product photos, Instagram ads, and launch videos.\nAnd then there's a small group of builders who just figured out...\n大多数人仍然在打开 Canva。\n有些人正在向代理机构支付数千美元用于产品照片、Instagram 广告和发布视频。\n然后还有一小群建造者，他们刚刚想明白……\n30\n64\n628\n123K",
+      "text": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 13\nIT'S SO OVER!!! Creative agencies are absolutely cooked.\nI just connected Claude Code to Higgsfield and generated:\n→ Product photos\n→ Instagram ads\n→ Launch videos\nAll in MINUTES.\nMost people are still paying $5k/month for this while opening Canva like it's 2022.\nThis\n太完了！！！创意机构完全完蛋了。\n我刚将 Claude Code 连接到 Higgsfield 并生成了：\n→ 产品照片\n→ Instagram 广告\n→ 启动视频\n全部在分钟内完成。\n大多数人仍在每月支付 5k 美元，而像 2022 年一样使用 Canva。\n这就是\nShow more\nQuote\n引用\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\n Article\n  文章\nClaude + Higgsfield can now run a FULL creative studio.\nClaude + Higgsfield 现在可以运行一个完整的创意工作室。\nMost people are still opening Canva.\nSome are paying agencies thousands of dollars for product photos, Instagram ads, and launch videos.\nAnd then there's a small group of builders who just figured out...\n大多数人仍然在打开 Canva。\n有些人正在向代理机构支付数千美元用于产品照片、Instagram 广告和发布视频。\n然后还有一小群建造者，他们刚刚想明白……\n30\n64\n628\n123K",
+      "title": "Prajwal Tomar reposted",
+      "url": "https://x.com/PrajwalTomar_/status/2054237786434326972"
+    },
+    {
+      "author": "PrajwalTomar_",
+      "language": "zh",
+      "publishedAt": "2026-05-12T14:26:18.000Z",
+      "source": "X / @PrajwalTomar_",
+      "summary": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\nThe new \n@Lovable\n aesthetics update is UNREAL.\nI just built this entire landing page with ONE prompt.\nIf your landing page still looks like a 2010 app, that's not an AI problem.\nThat's a workflow problem.\n新的 @Lovable 美学更新太不可思议了。\n我仅用一个提示就构建了这个整个着陆页。\n如果你的着陆页仍然看起来像 2010 年的应用，那不是人工智能的问题。\n那是工作流程的问题。\nQuote\n引用\nLovable\n@Lovable\n·\nMay 12\n0:54\nIntroducing the Lovable aesthetics update, a new level of design in vibe coding.\nAsk for typography, layout, and color preferences. Preview design concepts before building, and create bolder landing pages, apps, and blogs.\n推出可爱的美学更新，为氛围编码带来新的设计水平。\n询问字体、布局和颜色偏好。在构建之前预览设计概念，并创建更大胆的着陆页、应用程序和博客。\n22\n8\n243\n39K",
+      "text": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\nThe new \n@Lovable\n aesthetics update is UNREAL.\nI just built this entire landing page with ONE prompt.\nIf your landing page still looks like a 2010 app, that's not an AI problem.\nThat's a workflow problem.\n新的 @Lovable 美学更新太不可思议了。\n我仅用一个提示就构建了这个整个着陆页。\n如果你的着陆页仍然看起来像 2010 年的应用，那不是人工智能的问题。\n那是工作流程的问题。\nQuote\n引用\nLovable\n@Lovable\n·\nMay 12\n0:54\nIntroducing the Lovable aesthetics update, a new level of design in vibe coding.\nAsk for typography, layout, and color preferences. Preview design concepts before building, and create bolder landing pages, apps, and blogs.\n推出可爱的美学更新，为氛围编码带来新的设计水平。\n询问字体、布局和颜色偏好。在构建之前预览设计概念，并创建更大胆的着陆页、应用程序和博客。\n22\n8\n243\n39K",
+      "title": "Prajwal Tomar reposted",
+      "url": "https://x.com/PrajwalTomar_/status/2054206535434379669"
+    },
+    {
+      "author": "PrajwalTomar_",
+      "language": "zh",
+      "publishedAt": "2026-05-12T13:31:03.000Z",
+      "source": "X / @PrajwalTomar_",
+      "summary": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\nI just set up /goal in Claude Code and this is actually INSANE.\nThis thing runs AI tasks in the background for HOURS while you're doing literally anything else.\nI'm using it to automate our entire MVP delivery process at \n@ignytlabs\n and it's wild.\nHere's the exact prompt that's\n我刚在 Claude Code 中设置/goal，这实际上太疯狂了。\n这个东西在你做任何其他事情的时候，在后台运行 AI 任务数小时。\n我正在用它来自动化我们在 @ignytlabs 的整个 MVP 交付流程，这太疯狂了。\n这是确切的提示内容：\nShow more\n1\n2\n5\n1.4K",
+      "text": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\nI just set up /goal in Claude Code and this is actually INSANE.\nThis thing runs AI tasks in the background for HOURS while you're doing literally anything else.\nI'm using it to automate our entire MVP delivery process at \n@ignytlabs\n and it's wild.\nHere's the exact prompt that's\n我刚在 Claude Code 中设置/goal，这实际上太疯狂了。\n这个东西在你做任何其他事情的时候，在后台运行 AI 任务数小时。\n我正在用它来自动化我们在 @ignytlabs 的整个 MVP 交付流程，这太疯狂了。\n这是确切的提示内容：\nShow more\n1\n2\n5\n1.4K",
+      "title": "Prajwal Tomar reposted",
+      "url": "https://x.com/PrajwalTomar_/status/2054192634001027175"
+    },
+    {
+      "author": "PrajwalTomar_",
+      "language": "zh",
+      "publishedAt": "2026-05-12T09:34:02.000Z",
+      "source": "X / @PrajwalTomar_",
+      "summary": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\nWhile everyone was paying $200/month for Claude, Kimi was quietly becoming the AI coding agent nobody outside China was watching.\nThen K2.6 dropped:\n→ 7x cheaper than Opus 4.7\n→ on par with Claude on SWE-Bench + Terminal-Bench\n→ 12+ hour coding sessions\n→ 4,000+ tool calls\n虽然每个人都以每月 200 美元的价格支付 Claude，但 Kimi 却在悄然成为无人关注的 AI 编程代理。\n然后 K2.6 发布了：\n→ 比 Opus 4.7 便宜 7 倍\n→ 在 SWE-Bench + Terminal-Bench 上与 Claude 相当\n→ 12+ 小时编码会话\n→ 4,000+ 工具调用\nShow more\nQuote\n引用\nKirill\n@kirillk_web3\n·\nMay 10\n Article\n  文章\nKimi K2.6: Complete A–Z Guide to the Chinese AI Nobody Saw Coming\nKimi K2.6：完整 A–Z 指南，揭秘无人预见的中文 AI\nThis is a complete A–Z breakdown of what Kimi K2.6 actually is, what it can do, and why it's quietly becoming the most important coding model nobody is talking about yet.\nBut unlike every other \"Kimi...\n这是关于 Kimi K2.6 到底是什么、它能做什么以及为什么它正在悄然成为最重要却无人提及的编码模型的完整 A-Z 解析。\n但与所有其他的“Kimi...”不同\n4\n3\n43\n9.8K",
+      "text": "Prajwal Tomar reposted\nPrajwal Tomar 转发\nPrajwal Tomar\n@PrajwalTomar_\n·\nMay 12\nWhile everyone was paying $200/month for Claude, Kimi was quietly becoming the AI coding agent nobody outside China was watching.\nThen K2.6 dropped:\n→ 7x cheaper than Opus 4.7\n→ on par with Claude on SWE-Bench + Terminal-Bench\n→ 12+ hour coding sessions\n→ 4,000+ tool calls\n虽然每个人都以每月 200 美元的价格支付 Claude，但 Kimi 却在悄然成为无人关注的 AI 编程代理。\n然后 K2.6 发布了：\n→ 比 Opus 4.7 便宜 7 倍\n→ 在 SWE-Bench + Terminal-Bench 上与 Claude 相当\n→ 12+ 小时编码会话\n→ 4,000+ 工具调用\nShow more\nQuote\n引用\nKirill\n@kirillk_web3\n·\nMay 10\n Article\n  文章\nKimi K2.6: Complete A–Z Guide to the Chinese AI Nobody Saw Coming\nKimi K2.6：完整 A–Z 指南，揭秘无人预见的中文 AI\nThis is a complete A–Z breakdown of what Kimi K2.6 actually is, what it can do, and why it's quietly becoming the most important coding model nobody is talking about yet.\nBut unlike every other \"Kimi...\n这是关于 Kimi K2.6 到底是什么、它能做什么以及为什么它正在悄然成为最重要却无人提及的编码模型的完整 A-Z 解析。\n但与所有其他的“Kimi...”不同\n4\n3\n43\n9.8K",
+      "title": "Prajwal Tomar reposted",
+      "url": "https://x.com/PrajwalTomar_/status/2054132986396967251"
+    },
+    {
+      "author": "Chase",
+      "language": "en",
+      "publishedAt": "",
+      "source": "X / @Chase",
+      "summary": "Chase@ChaseAdEarn 150,000 welcome points, our best points offer ever, and reward the life well lived with Chase Sapphire Reserve.Learn MoreFrom chase.com701511.6K26M",
+      "text": "Chase@ChaseAdEarn 150,000 welcome points, our best points offer ever, and reward the life well lived with Chase Sapphire Reserve.Learn MoreFrom chase.com701511.6K26M",
+      "title": "Chase@ChaseAdEarn 150,000 welcome points, our best points offer ever, and reward the life well lived with Chase Sapphire Reserve.Learn MoreFrom chase.com701511.6K26M",
+      "url": "https://x.com/Chase/status/2051327041018933376"
+    },
+    {
+      "author": "grok",
+      "language": "en",
+      "publishedAt": "",
+      "source": "X / @grok",
+      "summary": "Grok@grokAdIntroducing Grok Voice Think Fast 1.0 — a state-of-the-art voice model built for complex, multi-step workflows with snappy responses and high accuracy. Try it for free todayLearn MoreFrom x.ai5629617.6K14M",
+      "text": "Grok@grokAdIntroducing Grok Voice Think Fast 1.0 — a state-of-the-art voice model built for complex, multi-step workflows with snappy responses and high accuracy. Try it for free todayLearn MoreFrom x.ai5629617.6K14M",
+      "title": "Grok@grokAdIntroducing Grok Voice Think Fast 1.0 — a state-of-the-art voice model built for complex, multi-step workflows with snappy responses and high accuracy. Try it for free todayLearn MoreFrom x.ai5629617.6K14M",
+      "url": "https://x.com/grok/status/2053236457800716778"
+    },
+    {
+      "author": "oscarmayer",
+      "language": "en",
+      "publishedAt": "",
+      "source": "X / @oscarmayer",
+      "summary": "Oscar Mayer@oscarmayerAdThe Wienie 500 is BACK. And it’s so close you can almost taste it. May 22. 2pm ET. Live on FOX.20755362.4M",
+      "text": "Oscar Mayer@oscarmayerAdThe Wienie 500 is BACK. And it’s so close you can almost taste it. May 22. 2pm ET. Live on FOX.20755362.4M",
+      "title": "Oscar Mayer@oscarmayerAdThe Wienie 500 is BACK. And it’s so close you can almost taste it. May 22. 2pm ET. Live on FOX.20755362.4M",
+      "url": "https://x.com/oscarmayer/status/2054625990064628089"
+    },
+    {
+      "author": "Merck",
+      "language": "en",
+      "publishedAt": "",
+      "source": "X / @Merck",
+      "summary": "Merck@MerckAdWe follow the science that helps impact lives. See how we're helping lead the next wave in cancer care.From merck.com1791.7K86M",
+      "text": "Merck@MerckAdWe follow the science that helps impact lives. See how we're helping lead the next wave in cancer care.From merck.com1791.7K86M",
+      "title": "Merck@MerckAdWe follow the science that helps impact lives. See how we're helping lead the next wave in cancer care.From merck.com1791.7K86M",
+      "url": "https://x.com/Merck/status/2039028622837657639"
+    }
+  ]
+}

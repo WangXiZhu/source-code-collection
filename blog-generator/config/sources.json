@@ -1,0 +1,58 @@
+{
+  "blogs": [
+    {
+      "name": "alexop.dev",
+      "feeds": [
+        "https://alexop.dev/rss.xml",
+        "https://alexop.dev/feed.xml",
+        "https://alexop.dev/atom.xml"
+      ]
+    },
+    {
+      "name": "aihero.dev",
+      "feeds": [
+        "https://aihero.dev/rss.xml",
+        "https://aihero.dev/feed.xml",
+        "https://aihero.dev/atom.xml"
+      ]
+    },
+    {
+      "name": "vrungta.substack.com",
+      "feeds": [
+        "https://vrungta.substack.com/feed"
+      ]
+    },
+    {
+      "name": "leehanchung",
+      "feeds": [
+        "https://leehanchung.com/rss.xml",
+        "https://leehanchung.com/feed.xml",
+        "https://leehanchung.com/atom.xml"
+      ]
+    }
+  ],
+  "x": {
+    "priorityAccounts": [
+      "claudeai",
+      "Tesla",
+      "AnthropicAI",
+      "cursor_ai"
+    ]
+  },
+  "github": {
+    "queries": [
+      "AI agent language:TypeScript",
+      "AI agent language:Python",
+      "agentic coding",
+      "LLM agent framework"
+    ]
+  },
+  "hackerNews": {
+    "queries": [
+      "AI agent",
+      "agentic coding",
+      "LLM developer tools",
+      "MCP"
+    ]
+  }
+}
