@@ -5,6 +5,9 @@ import { promisify } from "node:util";
 const execFile = promisify(execFileCallback);
 
 const FOLDER_TOKEN = process.env.FEISHU_FOLDER_TOKEN || "IwdmflebWl8HqAdKeCwc9clbn9f";
+const FEISHU_APP_ID = process.env.FEISHU_APP_ID || "";
+const FEISHU_APP_SECRET = process.env.FEISHU_APP_SECRET || "";
+const FEISHU_OPEN_BASE_URL = process.env.FEISHU_OPEN_BASE_URL || "https://open.feishu.cn";
 const LOOKBACK_HOURS = Number(process.env.DIGEST_LOOKBACK_HOURS || 24);
 const SINCE = new Date(Date.now() - LOOKBACK_HOURS * 60 * 60 * 1000);
 const TODAY = new Intl.DateTimeFormat("en-CA", {
@@ -15,6 +18,9 @@ const TODAY = new Intl.DateTimeFormat("en-CA", {
 }).format(new Date());
 
 const USER_AGENT = "blog-generator/0.1 (+https://openai.com)";
+const FEISHU_AUTH_MODE = FEISHU_APP_ID && FEISHU_APP_SECRET ? "app" : "lark-cli";
+
+let tenantAccessTokenCache = null;
 
 async function main() {
   const config = JSON.parse(await readFile(new URL("../config/sources.json", import.meta.url), "utf8"));
@@ -27,9 +33,11 @@ async function main() {
     collectGitHub(config.github.queries),
     collectHackerNews(config.hackerNews.queries)
   ]);
+  const gmailResult = await collectGmail();
 
   const sections = [
     { name: "X / Twitter", items: xResult.items, status: xResult.status },
+    { name: "Gmail", items: gmailResult.items, status: gmailResult.status },
     { name: "Blogs", items: blogItems },
     { name: "GitHub", items: githubItems },
     { name: "Hacker News", items: hnItems }
@@ -49,6 +57,7 @@ async function main() {
     console.log(JSON.stringify({
       ok: true,
       dryRun: true,
+      feishuAuthMode: FEISHU_AUTH_MODE,
       title: TODAY,
       folderToken: FOLDER_TOKEN,
       previousDocument: previous?.name || null,
@@ -59,24 +68,16 @@ async function main() {
     return;
   }
 
-  const created = await larkJson([
-    "docs",
-    "+create",
-    "--api-version",
-    "v2",
-    "--as",
-    "user",
-    "--parent-token",
-    FOLDER_TOKEN,
-    "--content",
-    xml,
-    "--doc-format",
-    "xml"
-  ]);
+  const created = await feishuCreateDocument({
+    parentToken: FOLDER_TOKEN,
+    content: xml,
+    format: "xml"
+  });
 
   const document = created?.data?.document || created?.data || {};
   console.log(JSON.stringify({
     ok: true,
+    feishuAuthMode: FEISHU_AUTH_MODE,
     title: TODAY,
     folderToken: FOLDER_TOKEN,
     previousDocument: previous?.name || null,
@@ -89,38 +90,22 @@ async function main() {
 }
 
 async function loadPreviousDigest() {
-  const list = await larkJson([
-    "drive",
-    "files",
-    "list",
-    "--as",
-    "user",
-    "--params",
-    JSON.stringify({
-      folder_token: FOLDER_TOKEN,
-      page_size: 20,
-      order_by: "EditedTime",
-      direction: "DESC"
-    })
-  ]);
+  const list = await feishuListFolderFiles({
+    folderToken: FOLDER_TOKEN,
+    pageSize: 20,
+    orderBy: "EditedTime",
+    direction: "DESC"
+  });
 
   const files = list?.data?.files || [];
   const latest = files.find((file) => file.type === "docx" && file.name !== TODAY) || files.find((file) => file.type === "docx");
   if (!latest) return { name: null, url: null, content: "" };
 
   try {
-    const fetched = await larkJson([
-      "docs",
-      "+fetch",
-      "--api-version",
-      "v2",
-      "--as",
-      "user",
-      "--doc",
-      latest.url || latest.token,
-      "--doc-format",
-      "text"
-    ]);
+    const fetched = await feishuFetchDocument({
+      documentId: latest.token,
+      format: "text"
+    });
     return {
       name: latest.name,
       url: latest.url,
@@ -276,6 +261,36 @@ async function collectBlogs(blogs) {
     }
   }
   return items;
+}
+
+async function collectGmail() {
+  const cache = await readJsonIfExists(new URL("../data/gmail_digest.json", import.meta.url));
+  if (!cache?.emails?.length) {
+    return {
+      items: [],
+      status: ["Gmail skipped: data/gmail_digest.json is not available. Generate it from the Gmail connector before running the daily job."]
+    };
+  }
+
+  const emails = cache.emails
+    .filter((email) => isRecent(email.receivedAt || email.date || cache.exportedAt))
+    .filter((email) => !isLikelyAdEmail(email))
+    .map((email) => ({
+      source: `Gmail / ${email.from || "unknown sender"}`,
+      title: email.subject || "Untitled email",
+      summary: truncate(email.summary || email.snippet || email.body || "", 500),
+      why: email.why || "Potentially relevant email from the recent Gmail scan after ad filtering.",
+      url: email.url || email.threadUrl || "https://mail.google.com/",
+      publishedAt: email.receivedAt || email.date || cache.exportedAt,
+      language: email.language || detectLanguage(`${email.subject || ""} ${email.summary || ""} ${email.snippet || ""}`)
+    }))
+    .filter((email) => email.summary || email.title);
+
+  const adCount = cache.emails.length - emails.length;
+  return {
+    items: emails,
+    status: [`Gmail cache used: ${emails.length}/${cache.emails.length} emails kept, ${adCount} filtered as ads/promotions, exported at ${cache.exportedAt || "unknown"}.`]
+  };
 }
 
 async function collectGitHub(queries) {
@@ -502,6 +517,12 @@ function isRelevantAiText(text = "") {
   return /ai|agent|agentic|llm|mcp|coding|developer tool|workflow|openai|claude|cursor|codex|rag|fsd|autonomous|robot|robotics|foundation model|deep learning|cuda|gpu/i.test(text);
 }
 
+function isLikelyAdEmail(email) {
+  const text = `${email.from || ""} ${email.subject || ""} ${email.summary || ""} ${email.snippet || ""} ${(email.labels || []).join(" ")}`.toLowerCase();
+  if (email.isAd === true || email.category === "promotion") return true;
+  return /unsubscribe|promotion|promotions|advertisement|sponsored|sale|discount|deal|coupon|limited time|newsletter|marketing|webinar|event invite|广告|促销|优惠|折扣|订阅|退订|营销|限时/.test(text);
+}
+
 function isRecent(date) {
   const time = new Date(date).getTime();
   return Number.isFinite(time) && time >= SINCE.getTime();
@@ -539,6 +560,176 @@ async function readJsonIfExists(url) {
   } catch {
     return null;
   }
+}
+
+async function feishuListFolderFiles({ folderToken, pageSize, orderBy, direction }) {
+  if (FEISHU_AUTH_MODE === "app") {
+    return feishuApiJson("/open-apis/drive/v1/files", {
+      method: "GET",
+      params: {
+        folder_token: folderToken,
+        page_size: pageSize,
+        order_by: orderBy,
+        direction
+      }
+    });
+  }
+
+  return larkJson([
+    "drive",
+    "files",
+    "list",
+    "--as",
+    "user",
+    "--params",
+    JSON.stringify({
+      folder_token: folderToken,
+      page_size: pageSize,
+      order_by: orderBy,
+      direction
+    })
+  ]);
+}
+
+async function feishuFetchDocument({ documentId, format }) {
+  if (FEISHU_AUTH_MODE === "app") {
+    return feishuApiJson(`/open-apis/docs_ai/v1/documents/${encodeURIComponent(documentId)}/fetch`, {
+      method: "POST",
+      body: {
+        format,
+        export_option: {
+          export_block_id: false,
+          export_cite_extra_data: false,
+          export_style_attrs: false
+        }
+      }
+    });
+  }
+
+  return larkJson([
+    "docs",
+    "+fetch",
+    "--api-version",
+    "v2",
+    "--as",
+    "user",
+    "--doc",
+    documentId,
+    "--doc-format",
+    format
+  ]);
+}
+
+async function feishuCreateDocument({ parentToken, content, format }) {
+  if (FEISHU_AUTH_MODE === "app") {
+    return feishuApiJson("/open-apis/docs_ai/v1/documents", {
+      method: "POST",
+      body: {
+        parent_token: parentToken,
+        content,
+        format
+      }
+    });
+  }
+
+  return larkJson([
+    "docs",
+    "+create",
+    "--api-version",
+    "v2",
+    "--as",
+    "user",
+    "--parent-token",
+    parentToken,
+    "--content",
+    content,
+    "--doc-format",
+    format
+  ]);
+}
+
+async function feishuApiJson(path, { method = "GET", params, body } = {}) {
+  const token = await getTenantAccessToken();
+  const url = new URL(path, FEISHU_OPEN_BASE_URL);
+
+  if (params) {
+    for (const [key, value] of Object.entries(params)) {
+      if (value !== undefined && value !== null) {
+        url.searchParams.set(key, String(value));
+      }
+    }
+  }
+
+  const response = await fetch(url, {
+    method,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json; charset=utf-8",
+      "User-Agent": USER_AGENT
+    },
+    body: body ? JSON.stringify(body) : undefined
+  });
+
+  const text = await response.text();
+  let parsed;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw new Error(`Feishu API ${method} ${path} returned non-JSON response: ${text}`);
+  }
+
+  if (!response.ok) {
+    throw new Error(`Feishu API ${method} ${path} failed with ${response.status}: ${parsed.msg || text}`);
+  }
+  if (typeof parsed?.code === "number" && parsed.code !== 0) {
+    throw new Error(`Feishu API ${method} ${path} error ${parsed.code}: ${parsed.msg || "unknown error"}`);
+  }
+  return parsed;
+}
+
+async function getTenantAccessToken() {
+  if (tenantAccessTokenCache && tenantAccessTokenCache.expiresAt > Date.now() + 60_000) {
+    return tenantAccessTokenCache.token;
+  }
+
+  const response = await fetch(new URL("/open-apis/auth/v3/tenant_access_token/internal", FEISHU_OPEN_BASE_URL), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "User-Agent": USER_AGENT
+    },
+    body: JSON.stringify({
+      app_id: FEISHU_APP_ID,
+      app_secret: FEISHU_APP_SECRET
+    })
+  });
+
+  const text = await response.text();
+  let parsed;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw new Error(`Failed to parse Feishu tenant token response: ${text}`);
+  }
+
+  if (!response.ok) {
+    throw new Error(`Feishu tenant token request failed with ${response.status}: ${parsed.msg || text}`);
+  }
+  if (typeof parsed?.code === "number" && parsed.code !== 0) {
+    throw new Error(`Feishu tenant token request error ${parsed.code}: ${parsed.msg || "unknown error"}`);
+  }
+
+  const token = parsed.tenant_access_token || parsed.data?.tenant_access_token;
+  const expiresIn = Number(parsed.expire || parsed.expires_in || parsed.data?.expire || parsed.data?.expires_in || 0);
+  if (!token) {
+    throw new Error("Feishu tenant token response did not include tenant_access_token");
+  }
+
+  tenantAccessTokenCache = {
+    token,
+    expiresAt: Date.now() + Math.max(expiresIn - 60, 60) * 1000
+  };
+  return token;
 }
 
 async function larkJson(args) {

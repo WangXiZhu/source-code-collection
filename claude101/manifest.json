@@ -1,0 +1,224 @@
+{
+  "courseTitle": "Claude 101",
+  "description": "Bilingual reading site with a fixed lesson order and section tree.",
+  "lessons": [
+    {
+      "slug": "what-is-claude",
+      "title": "What is Claude?",
+      "section": "Meet Claude",
+      "order": 1,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383389",
+      "enPath": "what-is-claude.md",
+      "zhPath": "what-is-claude-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "your-first-conversation-with-claude",
+      "title": "Your first conversation with Claude",
+      "section": "Meet Claude",
+      "order": 2,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383390",
+      "enPath": "your-first-conversation-with-claude.md",
+      "zhPath": "your-first-conversation-with-claude-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "getting-better-results",
+      "title": "Getting better results",
+      "section": "Meet Claude",
+      "order": 3,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383392",
+      "enPath": "getting-better-results.md",
+      "zhPath": "getting-better-results-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "claude-desktop-app-chat-cowork-code",
+      "title": "Claude desktop app: Chat, Cowork, Code",
+      "section": "Meet Claude",
+      "order": 4,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/440908",
+      "enPath": "claude-desktop-app-chat-cowork-code.md",
+      "zhPath": "claude-desktop-app-chat-cowork-code-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "introduction-to-projects",
+      "title": "Introduction to projects",
+      "section": "Organizing your work and knowledge",
+      "order": 5,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383393",
+      "enPath": "introduction-to-projects.md",
+      "zhPath": "introduction-to-projects-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "creating-with-artifacts",
+      "title": "Creating with artifacts",
+      "section": "Organizing your work and knowledge",
+      "order": 6,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383394",
+      "enPath": "creating-with-artifacts.md",
+      "zhPath": "creating-with-artifacts-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "working-with-skills",
+      "title": "Working with skills",
+      "section": "Organizing your work and knowledge",
+      "order": 7,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383396",
+      "enPath": "working-with-skills.md",
+      "zhPath": "working-with-skills-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "connecting-your-tools",
+      "title": "Connecting your tools",
+      "section": "Expanding Claude's reach",
+      "order": 8,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383397",
+      "enPath": "connecting-your-tools.md",
+      "zhPath": "connecting-your-tools-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "enterprise-search",
+      "title": "Enterprise search",
+      "section": "Expanding Claude's reach",
+      "order": 9,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383398",
+      "enPath": "enterprise-search.md",
+      "zhPath": "enterprise-search-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "research-mode-for-deep-dives",
+      "title": "Research mode for deep dives",
+      "section": "Expanding Claude's reach",
+      "order": 10,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383399",
+      "enPath": "research-mode-for-deep-dives.md",
+      "zhPath": "research-mode-for-deep-dives-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "claude-in-action-use-cases-by-role",
+      "title": "Claude in action: use-cases by role",
+      "section": "Putting it all together",
+      "order": 11,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383401",
+      "enPath": "claude-in-action-use-cases-by-role.md",
+      "zhPath": "claude-in-action-use-cases-by-role-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "other-ways-to-work-with-claude",
+      "title": "Other ways to work with Claude",
+      "section": "Putting it all together",
+      "order": 12,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/383402",
+      "enPath": "other-ways-to-work-with-claude.md",
+      "zhPath": "other-ways-to-work-with-claude-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "whats-next",
+      "title": "What's next?",
+      "section": "Putting it all together",
+      "order": 13,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/385338",
+      "enPath": "whats-next.md",
+      "zhPath": "whats-next-zh-CN/translation.md",
+      "hasZh": true
+    },
+    {
+      "slug": "certificate-of-completion",
+      "title": "Certificate of completion",
+      "section": "Putting it all together",
+      "order": 14,
+      "sourceUrl": "https://anthropic.skilljar.com/claude-101/385349",
+      "enPath": "certificate-of-completion.md",
+      "zhPath": "certificate-of-completion-zh-CN/translation.md",
+      "hasZh": true
+    }
+  ],
+  "sections": [
+    {
+      "section": "Meet Claude",
+      "items": [
+        [
+          "what-is-claude",
+          "What is Claude?"
+        ],
+        [
+          "your-first-conversation-with-claude",
+          "Your first conversation with Claude"
+        ],
+        [
+          "getting-better-results",
+          "Getting better results"
+        ],
+        [
+          "claude-desktop-app-chat-cowork-code",
+          "Claude desktop app: Chat, Cowork, Code"
+        ]
+      ]
+    },
+    {
+      "section": "Organizing your work and knowledge",
+      "items": [
+        [
+          "introduction-to-projects",
+          "Introduction to projects"
+        ],
+        [
+          "creating-with-artifacts",
+          "Creating with artifacts"
+        ],
+        [
+          "working-with-skills",
+          "Working with skills"
+        ]
+      ]
+    },
+    {
+      "section": "Expanding Claude's reach",
+      "items": [
+        [
+          "connecting-your-tools",
+          "Connecting your tools"
+        ],
+        [
+          "enterprise-search",
+          "Enterprise search"
+        ],
+        [
+          "research-mode-for-deep-dives",
+          "Research mode for deep dives"
+        ]
+      ]
+    },
+    {
+      "section": "Putting it all together",
+      "items": [
+        [
+          "claude-in-action-use-cases-by-role",
+          "Claude in action: use-cases by role"
+        ],
+        [
+          "other-ways-to-work-with-claude",
+          "Other ways to work with Claude"
+        ],
+        [
+          "whats-next",
+          "What's next?"
+        ],
+        [
+          "certificate-of-completion",
+          "Certificate of completion"
+        ]
+      ]
+    }
+  ]
+}

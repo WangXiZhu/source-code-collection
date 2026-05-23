@@ -7,7 +7,8 @@
     "daily": "node src/digest.mjs",
     "start": "node src/digest.mjs",
     "x:following": "node scripts/extract_x_following_cdp.mjs",
-    "x:test": "node scripts/print_x_posts.mjs"
+    "x:test": "node scripts/print_x_posts.mjs",
+    "gmail:test": "node scripts/print_gmail_digest.mjs"
   },
   "engines": {
     "node": ">=18"
